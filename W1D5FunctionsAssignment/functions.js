@@ -53,7 +53,7 @@ console.log("The volume of the cylinder is equal to ", resultOfVolume);
 function houseVolume(width, depth, height, sweep){
 
     let livingV = livingVolume(width, depth, height);
-    let triangleA = triangleArea(width, sweep);
+    let triangleA = triangleArea(width, sweep, sweep);
     let roofV = roofVolume(triangleA, depth);
     return (livingV + roofV);
 }
@@ -62,8 +62,8 @@ function livingVolume(w, d, h){
     return (w*d*h);
 }
 
-function triangleArea(a, b){
-    let s = (a+b+b)/2;
+function triangleArea(a, b, c){
+    let s = (a+b+c)/2;
     return (Math.sqrt(s*(s-a)*(s-b)*(s-b)));
 }
 
