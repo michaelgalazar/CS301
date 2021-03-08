@@ -16,29 +16,37 @@ while (i < numberOfElements-1) {
 }
 console.log(inputArray);
 
-let newArray = [];
+let filteredArray = [];
 let j = 0;
 for (let i = 0; i < inputArray.length; i++) {
     if (inputArray[i] > 0) {
-        newArray[j] = inputArray[i];
+        filteredArray[j] = inputArray[i];
         j++;
     }
 }
 
-console.log(newArray);
+console.log(filteredArray);
 
-let sum = 0;
+let sumOfEveryDigits = 0;
+let sumOfAllTheElements = 0;
 let value = 0;
 
-for (let k = 0; k < newArray.length; k++) {
+let sumOfDigitsArray = [];
 
-    value = newArray[k];
+for (let k = 0; k < filteredArray.length; k++) {
+
+    value = filteredArray[k];
+    sumOfEveryDigits = 0;
 
     while (value !== 0) {
-        sum = sum + value % 10;
+        sumOfEveryDigits = sumOfEveryDigits + value % 10;
         value = Math.floor(value / 10);
     }
+    sumOfAllTheElements += sumOfEveryDigits;
+ //   sumOfDigitsArray += sumOfEveryDigits + ", ";
+    sumOfDigitsArray[k] = sumOfEveryDigits;
 }
-console.log(sum);
 
-
+//console.log("[",sumOfDigitsArray, "]");
+console.log(sumOfDigitsArray);
+console.log(sumOfAllTheElements);
